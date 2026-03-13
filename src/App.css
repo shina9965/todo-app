@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* 画面全体 */
+.page {
+  min-height: 100vh;
+  padding: 60px 20px 24px;
+  background: #eef2f7;
+  color: #222;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.page.darkmode {
+  background: #111827;
+  color: #f3f4f6;
+}
+
+/* 中央カード */
+.app {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 32px 24px 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.25s, color 0.25s, box-shadow 0.25s;
+}
+
+.page.darkmode .app {
+  background: #1f2937;
+  color: #f3f4f6;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.title {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: inherit;
+}
+
+/* ダークモードボタン */
+.change-darkmode-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #4f8cff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 1000;
+}
+
+.change-darkmode-btn::before {
+  content: "☀";
+  font-size: 18px;
+}
+
+.page.darkmode .change-darkmode-btn {
+  background: #374151;
+}
+
+.page.darkmode .change-darkmode-btn::before {
+  content: "🌙";
+}
+
+.change-darkmode-btn:hover {
+  background: #3a74df;
+}
+
+/* 入力エリア */
+.create-todo-area {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.input-area {
+  flex: 1;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  background: white;
+  color: #222;
+}
+
+.input-area:focus {
+  border-color: #4f8cff;
+  box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.15);
+}
+
+.page.darkmode .input-area {
+  background: #111827;
+  border: 1px solid #4b5563;
+  color: #f3f4f6;
+}
+
+/* 共通ボタン */
+.btn {
+  min-width: 46px;
+  height: 46px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 12px;
+  background: #4f8cff;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #3a74df;
+}
+
+/* 一覧 */
+.todo-dispay {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #dbe2ea;
+  border-radius: 14px;
+  background: white;
+  transition: 0.2s;
+}
+
+.todo-item:hover {
+  background: #f8fbff;
+  border-color: #bfd3ff;
+}
+
+.page.darkmode .todo-item {
+  background: #111827;
+  border: 1px solid #374151;
+}
+
+.page.darkmode .todo-item:hover {
+  background: #1a2436;
+  border-color: #4b5563;
+}
+
+.toggle {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #4f8cff;
+}
+
+.todo-item a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #9aa3af;
+}
+
+.page.darkmode .completed {
+  color: #6b7280;
+}
+
+.todo-item .btn {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0;
+  background: #ff5c5c;
+  font-size: 18px;
+}
+
+.todo-item .btn:hover {
+  background: #e04848;
+}

@@ -1,19 +1,9 @@
-/*input.tsx*/
+/*Input.tsx*/
 import "./App.css"
 import { useState, useRef} from "react"
+import type {TodoProps} from "./App"
 
-export type Todo = {
-  id: number;
-  text: string;
-  completed: boolean;
-};
-
-type InputProps = {
-  todos: Todo[];
-  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
-}
-
-function Input({ todos, setTodos }: InputProps){
+function Input({ todos, setTodos }: TodoProps){
 
   const [input, setInput] = useState('');
   const nextId = useRef(1);
